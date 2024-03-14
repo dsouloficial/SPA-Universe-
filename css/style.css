@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+:root {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    height: 100vh;
+    background-image: url(assets/mountains-universe-1.png);
+    background-position: top center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.container {
+    height: 100vh;
+    max-width: 121rem;
+    margin: auto;
+    width: 90%;
+}
+nav {
+    padding: 5rem 0;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 4.2rem;
+}
+nav a {
+    color: #C4C4CC;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    transition: all .3s;
+}
+nav a:hover {
+    color: #FFFFFF;
+    font-weight: 700;
+    transform: scale(1.4);
+}
+
+/* Home */
+
+.home-wrapper {
+   display: grid;
+   place-items: center;
+   margin-top: -7.8rem;
+}
+.home {
+    margin-top: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+}
+h1 {
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 6rem;
+    color: #E1E1E6;
+}
+.home button {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 3.2rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.home button:hover {
+    transform: scale(1.1);
+}
+
+/* Universe & Explore */
+.universe-wrapper, .explore-wrapper {
+    max-width: 64.8rem;
+    margin-top: 2.8rem;
+    margin-left: 3rem;
+}
+.universe-wrapper p, .explore-wrapper p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+    color: #E1E1E6;
+    margin-top: 1.8rem;
+}
+
+/* Animations */
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-7rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes samePlace {
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+nav ul li:nth-child(1) {
+    animation: fromTop 1.2s;
+}
+nav ul li:nth-child(2) {
+    animation: fromTop 1.2s .1s backwards;
+}
+nav ul li:nth-child(3) {
+    animation: fromTop 1.2s .2s backwards;
+}
+nav ul li:nth-child(4) {
+    animation: fromTop 1.2s .3s backwards;
+}
+h1,p,button {
+    animation: samePlace 1s backwards;
+}
+
+/* End of the animations */
+
+@media (max-width:650px) {  
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    nav ul {
+        gap: 1.8rem;
+    }
+
+   nav a {
+        font-size: clamp(1.4rem,4vw,2.2rem);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .universe-wrapper {
+        margin: 0;
+    }
+
+}
